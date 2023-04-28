@@ -1,0 +1,226 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+    ;
+}
+
+
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 50px;
+    background: rgb(65, 161, 255);
+    background: linear-gradient(306deg, rgba(65, 161, 255, 0.8940826330532213) 0%, rgba(255, 255, 255, 1) 100%, rgba(0, 0, 0, 1) 100%);
+
+    .switch {
+        position: absolute;
+        display: inline-block;
+        top: 10px;
+        right: 10px;
+        width: 60px;
+        height: 34px;
+    }
+
+    .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+
+    .slider:before {
+        position: absolute;
+        content: "";
+        height: 26px;
+        width: 26px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+
+    input:checked+.slider {
+        background-color: #2196F3;
+    }
+
+    input:focus+.slider {
+        box-shadow: 0 0 1px #2196F3;
+    }
+
+    input:checked+.slider:before {
+        -webkit-transform: translateX(26px);
+        -ms-transform: translateX(26px);
+        transform: translateX(26px);
+    }
+
+    .slider.round {
+        border-radius: 34px;
+    }
+
+    .slider.round:before {
+        border-radius: 50%;
+    }
+
+    .header {
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 40px;
+
+        h1.gradient-text {
+            text-align: center;
+            background: linear-gradient(to right, #325578, #8aadca, #355b81);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            background-size: 200% 100%;
+            transition: background-position 2s ease-out;
+            margin-top: 50px;
+            margin-right: 10px;
+        }
+
+        h1.gradient-text:hover {
+            background-position: right;
+        }
+    }
+
+    .quiz {
+        margin-top: 50px;
+        background-color: white;
+        width: 80%;
+        padding-left: 5px;
+        padding-right: 5px;
+        padding-top: 20px;
+        padding-bottom: 50px;
+        border-radius: 20px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+
+        div.questionsDiv {
+            padding: 0 15px 15px 15px;
+
+            label.questions {
+                font-weight: 800;
+            }
+
+            div.question {
+                div.divider {
+                    margin-top: 5px;
+                }
+            }
+        }
+
+        div.bottomDiv {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding-left: 10px;
+
+            p {
+                margin-top: 15px;
+            }
+
+            button#showResult {
+                margin-bottom: 50px;
+            }
+
+            button.points-and-btn {
+                margin-top: 50px;
+            }
+
+            .end-div {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-top: 50px;
+
+            }
+        }
+
+        #result>p.points-and-btn {
+            margin-top: 50px;
+        }
+
+        .points-and-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            p.points-and-btn {
+                margin-top: 50px;
+            }
+        }
+
+        button {
+            background-color: #2195f3a0;
+            font-weight: 800;
+            padding: 15px;
+            border-radius: 10px;
+
+        }
+
+    }
+}
+
+//desktop
+@media (min-width:600px) {
+    .main-container {
+        h1.gradient-text {
+            font-size: 56px;
+        }
+
+        .quiz {
+            width: 50%;
+            padding-left: 5px;
+
+            label {
+                font-size: 20px;
+            }
+
+            p {
+                font-size: 20px;
+            }
+        }
+    }
+
+
+}
+
+.dark-mode {
+    background: rgb(65, 161, 255);
+    background: linear-gradient(306deg, #283E51 0%, #0A2342 100%);
+    color: white;
+
+    .quiz {
+        background-color: rgb(28, 74, 119);
+        color: white;
+
+        button {
+            background-color: #ffffffa0;
+            color: black;
+
+        }
+    }
+}
