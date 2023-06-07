@@ -1,5 +1,8 @@
 let mainContainer = document.querySelector(".main-container");
 let toggleBtn = document.querySelector(".toggle");
+let showResultBtn = document.querySelector('#showResult');
+let result = document.querySelector('#result');
+let endDiv = document.querySelector(".end-div");
 
 toggleBtn.addEventListener("click", () => {
     mainContainer.classList.toggle("dark-mode");
@@ -50,9 +53,7 @@ let quizData = [
 ];
 
 
-let showResultBtn = document.querySelector('#showResult');
-let result = document.querySelector('#result');
-let endDiv = document.querySelector(".end-div");
+
 
 let getResult = () => {
     let allCheckboxesInput = document.querySelectorAll("input[type='checkbox'][name='answer']:checked");
@@ -72,12 +73,6 @@ let getResult = () => {
 
     result.innerText = '';
     endDiv.innerText = '';
-
-    /* Info för nedan i if-statement
-    (object.answer[0]) = brun och frukt (rätt)
-    (object.answer[1]) = svart och grönsaker (rätt)
-    (object.answer[1, 2]) = rosa och stenar (fel)
-    (object.answer[1, 3]) = grön och möbler (fel)*/
 
     quizData.forEach((object) => {
         let p = document.createElement('p')
